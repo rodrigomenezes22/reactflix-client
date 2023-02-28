@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './Components/Home'
 import Footer from './Components/Footer'
 import Videos from './Components/Videos'
+import CmsVideos from './Components/CmsVideos';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={ <Home />} />
+          <Route path="/adm-videos" element={ <CmsVideos />} />
 
         </Routes>
       </main>
