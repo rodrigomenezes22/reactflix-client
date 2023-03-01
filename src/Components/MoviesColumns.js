@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
 function MoviesColumns() {
   const movies = [
@@ -51,7 +52,7 @@ function MoviesColumns() {
   ];
   const imagehandle = () => {};
   return (
-    <>
+    <Container>
       <Row xs={1} md={2} lg={4}>
         {movies.map((e) => (
           <Col>
@@ -65,7 +66,7 @@ function MoviesColumns() {
           // </div>
         ))}
       </Row>
-    </>
+    </Container>
   );
 }
 
