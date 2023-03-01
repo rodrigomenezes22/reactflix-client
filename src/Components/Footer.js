@@ -18,7 +18,7 @@ function Footer() {
                 <h3 className='roboto small text-white text-start'>NAVIGATION</h3>
                 <ul className='nav flex-column'>
                     <li className='nav-item'><Link to="/">HOME</Link></li>
-                    <li className='nav-item'><Link to="/api/movies">MOVIES</Link></li>
+                    <li className='nav-item'><Link to="/api/movies">MOVIES LIST</Link></li>
                     <li className='nav-item'><Link to="/movies/new">ADD NEW MOVIE</Link></li>
                     <li className='nav-item'><Link to="/">TV SHOWS</Link></li>
                     <li className='nav-item'><Link to="/">CATEGORIES</Link></li>

@@ -10,10 +10,6 @@ function MoviesList() {
         <MoviesColumns />
       </Container>
 
-      <Container>
-        <h3 className="listTitle">Hit Movies</h3>
-        <MoviesColumns />
-      </Container>
     </>
   );
 }
