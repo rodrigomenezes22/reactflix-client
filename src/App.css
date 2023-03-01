@@ -37,3 +37,32 @@
     transform: rotate(360deg);
   }
 }
+
+#search{
+  background-color: red;
+  border-radius: 30px;
+}
+#join{
+  background-color: darkcyan;
+  border-radius: 30px;
+  margin:10px;
+}
+#hero{
+  background: url("./images/city.jpg");
+  height: 80vh;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#navbarScroll{
+  display:flex;
+  
+  color:white;
+  font-size:2vh;
+}
+#brand{
+  color:red;
+  margin: 0;
+  font-size:5vh;
+  font-weight:bolder;
+}
