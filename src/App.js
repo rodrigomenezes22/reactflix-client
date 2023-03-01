@@ -19,7 +19,7 @@ function App() {
           <Route path="/movies/new" element={<NewMovie />} />
         </Routes>
       </main>
-      <Videos />
+
       <footer>
         <Footer />
       </footer>
