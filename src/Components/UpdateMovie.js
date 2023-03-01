@@ -108,7 +108,7 @@ function UppdateMovie() {
                             <input type="text" className="form-control" id="poster" name='poster' placeholder="Poster URL" value={movie.poster} onChange={handleChange} />
                         </div>
                         <div className="col-12 text-start">
-                            <button type="submit" className="btn btn-primary">Create Movie</button>
+                            <button type="submit" className="btn btn-primary">Update Movie</button>
                             <br /><br />
                             {formError !== "" ? 
                             <div className="alert alert-warning" role="alert">
