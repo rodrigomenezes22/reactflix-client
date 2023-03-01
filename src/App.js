@@ -6,6 +6,7 @@ import Videos from './Components/Videos';
 import NewMovie from './Components/NewMovie';
 import MoviesList from "./Components/MoviesList";
 import Moviesdetails from "./Components/Moviesdetails";
+import UppdateMovie from "./Components/UpdateMovie";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/api/movies" element={<MoviesList />} />
           <Route path="/api/movies/:id" element={<Moviesdetails />} />
           <Route path="/movies/new" element={<NewMovie />} />
+          <Route path="/update/movies/:id" element={<UppdateMovie />} />
         </Routes>
       </main>
 
