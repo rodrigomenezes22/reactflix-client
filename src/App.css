@@ -96,9 +96,13 @@ footer .nav .nav-item a {
 .form-label {
   width: 100%;
   text-align: left;
-  color: white;
 }
 
+
+.videos-form-wrapper {
+  background-color: white;
+
+}
 
 @keyframes App-logo-spin {
   from {
