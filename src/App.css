@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;900&display=swap');
 
 .App {
@@ -21,15 +20,24 @@
 }
 
 .movieImages {
-  width: 100%;
-  height: 100%;
+  width: 90%;
   /* object-fit: fill;
   display: flex; */
-  margin: 0.5%;
+  margin-top: 10%;
+  margin-bottom: 10%;
   box-shadow: 1px 1px 1px black;
 }
 
+.movieInfoColumn {
+  display: grid;
+  align-content: space-around;
+}
 
+#movieInfoButtons {
+  display: flex;
+  align-content: center;
+  padding: 1rem;
+}
 
 .listTitle {
   margin-top: 1rem;
@@ -53,7 +61,7 @@ footer {
 
 footer .logo {
   font-family: 'Bebas Neue', cursive;
-  color: #CC0808 ;
+  color: #CC0808;
   text-transform: uppercase;
   font-size: 3rem;
   text-align: left;
@@ -108,9 +116,8 @@ footer .nav .nav-item a {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-
-
