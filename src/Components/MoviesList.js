@@ -11,13 +11,7 @@ function MoviesList() {
       </Container>
 
       <Container>
-        <h3 className="listTitle">Latest Movies</h3>
-        <MoviesColumns />
-      </Container>
-
-      <Container>
         <h3 className="listTitle">Hit Movies</h3>
-
         <MoviesColumns />
       </Container>
     </>
