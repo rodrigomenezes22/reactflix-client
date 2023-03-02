@@ -16,6 +16,8 @@ function Home() {
       <Videos genre="Crime" />
 
       <Videos genre="Drama" />
+
+      <Videos genre="Action" />
     </div>
   );
 }
