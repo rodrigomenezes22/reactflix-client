@@ -38,60 +38,66 @@ function MoviesColumns() {
   return (
     <>
       {movies.map((e) => (
-        <Row className="bg-light border rounded m-4" key={e.id}>
-          <Col sm={2}>
+        <Row className="bg-light border rounded m-3 p-1" key={e.id}>
+          <Col lg={2} md={6} sm={12}>
             <Link to={`/api/movies/${e.id}`}>
               <img className="movieImages" src={e.poster} />
             </Link>
           </Col>
-          <Col sm={10} className="movieInfoColumn">
+          <Col lg={10} md={12}  sm={12} className="movieInfoColumn">
             <Row className="fs-5 fw-bold text-wrap text-uppercase">
               {e.title}
             </Row>
             <Row>
-              <Col sm={3}>
+              <Col lg={3} md={2} sm={6}>
                 <Row className="fw-bold">Director</Row>
                 <Row>{e?.director}</Row>
               </Col>
-              <Col sm={1}>
+              <Col lg={1} md={2} sm={6}>
                 <Row className="fw-bold">Year</Row>
                 <Row>{e?.year}</Row>
               </Col>
-              <Col sm={1}>
+              <Col lg={1} md={2} sm={6}>
                 <Row className="fw-bold">Rating</Row>
                 <Row>{e?.rating}</Row>
               </Col>
-              <Col sm={1}>
+              <Col lg={1} md={2} sm={6}>
                 <Row className="fw-bold">Genre</Row>
                 <Row>{e?.genre}</Row>
               </Col>
-              <Col sm={1}>
+              <Col lg={1} md={2} sm={6}>
                 <Row className="fw-bold">Duration</Row>
                 <Row>{e?.movie_duration}</Row>
               </Col>
-              <Col sm={1}></Col>
-              <Col sm={4} id="movieInfoButtons">
-                <Col sm={2}>
+
+              <Col lg={5} md={12} sm={12} id="movieInfoButtons">
+                <Col lg={4}>
                   <Link
                     to={`/update/movies/${e.id}`}
                     className="btn btn-primary btn-sm"
                     type="button"
                   >
+                    <span class="material-symbols-sharp">
+                      edit
+                      </span>
                     Edit
                   </Link>
                 </Col>
 
-                <Col sm={3}>
+                <Col lg={3} md={3} sm={12}>
                   <button
                     className="btn btn-danger btn-sm"
                     value={e.id}
                     onClick={handleDelete}
                     type="button"
                   >
+                   <span class="material-symbols-sharp">
+                    delete
+                    </span>
                     Delete
                   </button>
                 </Col>
-                <Col></Col>
+                
               </Col>
             </Row>
           </Col>

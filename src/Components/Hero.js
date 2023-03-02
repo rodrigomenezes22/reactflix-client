@@ -24,7 +24,7 @@ return(
         <div className="hero-body"> 
             <h1 className="text-white bebas">{movie?.title}</h1>
             <p className="text-white">{movie?.year} | {movie?.movie_duration} | {movie?.genre} | Directed by {movie?.director}</p>
-            <Link to={`/api/movies/${movie?.id}`} className="btn btn-primary">View Details</Link>
+            <div className="col-2"><Link to={`/api/movies/${movie?.id}`} className="btn btn-primary"> <span class="material-symbols-sharp">read_more</span>View Details</Link></div>
         </div>
         </Container>
     </div>
