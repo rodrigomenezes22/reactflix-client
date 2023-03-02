@@ -13,9 +13,9 @@ function Moviesdetails() {
   }, [id]);
   return (
     <div className="container">
-      <h2 className="text-white">{movie?.title}</h2>
+      <h2 className="text-white mt-5">{movie?.title}</h2>
       <img
-        className="movieImages col-3 mb-1"
+        className="movieDetailsImages col-3"
         src={movie?.poster}
         alt={movie?.title}
       />
