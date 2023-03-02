@@ -6,10 +6,9 @@ import axios from "axios";
 import { Button } from "bootstrap";
 
 function MoviesColumns() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [deleteFlag, setDeleteFlag] = useState(false);
-
 
   useEffect(() => {
     axios
@@ -18,17 +17,16 @@ function MoviesColumns() {
       .catch((e) => console.log(e));
   }, []);
 
-
-
   const handleDelete = (e) => {
     axios
-      .delete(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${e.target.value}`)
+      .delete(
+        `${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${e.target.value}`
+      )
       .then((res) => navigate("/api/movies"))
       .catch((e) => console.log(e));
-      
-      setDeleteFlag(!deleteFlag)
-  };
 
+    setDeleteFlag(!deleteFlag);
+  };
 
   useEffect(() => {
     axios
@@ -36,8 +34,6 @@ function MoviesColumns() {
       .then((res) => setMovies(res.data))
       .catch((e) => console.log(e));
   }, [deleteFlag]);
-
-
 
   return (
     <>
@@ -73,17 +69,29 @@ function MoviesColumns() {
                 <Row className="fw-bold">Duration</Row>
                 <Row>{e?.movie_duration}</Row>
               </Col>
-<Col sm={5} id="movieInfoButtons">
-                <Col sm={1}>
-                  <Link to={`/update/movies/${e.id}`} className="btn btn-primary btn-sm" type="button">
+              <Col sm={1}></Col>
+              <Col sm={4} id="movieInfoButtons">
+                <Col sm={2}>
+                  <Link
+                    to={`/update/movies/${e.id}`}
+                    className="btn btn-primary btn-sm"
+                    type="button"
+                  >
                     Edit
                   </Link>
                 </Col>
-                <Col sm={9}>
-                  <button className="btn btn-danger btn-sm" value={e.id} onClick={handleDelete} type="button">
+
+                <Col sm={3}>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    value={e.id}
+                    onClick={handleDelete}
+                    type="button"
+                  >
                     Delete
                   </button>
                 </Col>
+                <Col></Col>
               </Col>
             </Row>
           </Col>
