@@ -1,18 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import {  Link } from "react-router-dom";
+import axios from "axios";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Container from 'react-bootstrap/Container'
 
+
+
 function Videos() {
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
+      .then((res) => setMovies(res.data))
+      .catch((e) => console.log(e));
+  }, []);
 
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
+          breakpoint: { max: 4000, min: 1921 },
           items: 5
         },
         desktop: {
-          breakpoint: { max: 3000, min: 1024 },
+          breakpoint: { max: 1920, min: 1024 },
           items: 5
         },
         tablet: {
@@ -25,22 +38,14 @@ function Videos() {
         }
       };
 
-    const videos = [
-        {image: "https://cdn.shopify.com/s/files/1/0548/8404/0870/products/TheFamilyComedy-PersonalizedMoviePoster_b59527ba-7360-415b-98b3-33b4086e7c06_1200x.jpg?v=1617385439"},
-        {image: "https://images.squarespace-cdn.com/content/v1/5acd17597c93273e08da4786/1547847934765-ZOU5KGSHYT6UVL6O5E5J/Shrek+Poster.png"},
-        {image: "https://www.discountdisplays.co.uk/our-blog/wp-content/uploads/thor-the-dark-world-crowded-691x1024.jpg"},
-        {image: "https://images.fandango.com/ImageRenderer/400/0/redesign/static/img/default_poster.png/0/images/masterrepository/other/ant_man_ver5.jpg"},
-        {image: "https://m.media-amazon.com/images/I/71KPOvu-hOL._AC_SY679_.jpg"} 
 
-        
-    ]
 
   return (
     <section className='videos'>
         <Container>
             <Carousel responsive={responsive}>
             {
-                videos.map((video) => ( <div className='video-wrappers'><img src={video.image} className="video-covers" alt="" /></div>))
+                movies.map((movie) => ( <div className='video-wrappers'  key={movie.id}><Link to={`/api/movies/${movie.id}`}><img src={movie.poster} className="video-covers" alt={movie.title} /></Link></div>))
             }
             </Carousel>
         </Container>

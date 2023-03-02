@@ -10,9 +10,6 @@ function Home() {
 
       
       <Hero />
-      <MoviesList />
-
-      <h1>Home!</h1>
 
       <Videos />
     </div>

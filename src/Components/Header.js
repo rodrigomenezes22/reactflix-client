@@ -3,14 +3,38 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import { NavLink, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 function Header() {
+
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  
+  const handleScroll = () => {
+      const position = window.pageYOffset;
+      if (position > 30) {
+      setIsScrolled(true);
+      } else if (position < 30) {
+      setIsScrolled(false);
+      }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+    window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
+
   return (
+    <header className={isScrolled ? "sticky scrolled" : "sticky"}>
     <Navbar className="d-flex navbar-fixed-top mt-0"  expand="lg" >
-      <Container fluid>
+      <Container>
         
-        <Navbar.Brand id="brand" href="#">REACTFLIX</Navbar.Brand>
+        <Navbar.Brand id="brand"><Link to="/">REACTFLIX</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" >
           <Nav id="navbar"
@@ -18,11 +42,11 @@ function Header() {
            
             navbarScroll
           >
-            <Nav.Link className="text-light" href="#action1">Home</Nav.Link>
-            <Nav.Link className="text-light" href="#action2">Movies</Nav.Link>
-            <Nav.Link className="text-light" href="#action2">Series</Nav.Link>
-            <Nav.Link className="text-light" href="#action2">TV Shows</Nav.Link>
-            <Nav.Link className="text-light" href="#action2">Categories</Nav.Link>
+            <NavLink className="text-light" to="/">Home</NavLink>
+            <NavLink className="text-light" to="/api/movies">Movies</NavLink>
+            <NavLink className="text-light" to="/movies/new">Add Movie</NavLink>
+            <NavLink className="text-light" to="#action2">TV Shows</NavLink>
+            <NavLink className="text-light" to="#action2">Categories</NavLink>
             
             
           </Nav>
@@ -39,6 +63,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </header>
   );
 }
 

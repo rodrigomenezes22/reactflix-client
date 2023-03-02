@@ -8,6 +8,8 @@ import { Button } from "bootstrap";
 function MoviesColumns() {
   const navigate = useNavigate()
   const [movies, setMovies] = useState([]);
+  const [deleteFlag, setDeleteFlag] = useState(false);
+
 
   useEffect(() => {
     axios
@@ -16,11 +18,15 @@ function MoviesColumns() {
       .catch((e) => console.log(e));
   }, []);
 
+
+
   const handleDelete = (e) => {
     axios
       .delete(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${e.target.value}`)
       .then((res) => navigate("/api/movies"))
       .catch((e) => console.log(e));
+      
+      setDeleteFlag(!deleteFlag)
   };
 
 
@@ -29,7 +35,7 @@ function MoviesColumns() {
       .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
       .then((res) => setMovies(res.data))
       .catch((e) => console.log(e));
-  }, [handleDelete]);
+  }, [deleteFlag]);
 
 
 
