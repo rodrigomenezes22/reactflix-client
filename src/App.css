@@ -31,6 +31,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 #search{
@@ -161,10 +162,39 @@ footer .nav .nav-item a {
   text-align: left;
 }
 
+.sticky {
+  position: fixed;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 99;
+}
+
+.scrolled {
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+}
 
 .videos-form-wrapper {
   background-color: white;
 
+}
+
+@media only screen and (max-width: 1600px) {
+  #hero {
+    height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #hero {
+    height: 45vh;
+  }
+}
+
+@media only screen and (max-width: 728px) {
+  #hero {
+    height: 35vh;
+  }
 }
 
 @keyframes App-logo-spin {
