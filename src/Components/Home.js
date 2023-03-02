@@ -11,7 +11,7 @@ function Home() {
       
       <Hero />
 
-      <Videos />
+      <Videos genre="TV Series" />
     </div>
   );
 }

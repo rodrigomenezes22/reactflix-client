@@ -9,6 +9,7 @@ function MoviesList() {
   return (
     <>
       <Container>
+        <div className="spacer"></div>
         <Row className="movieListTitleRow">
           <Col sm={6}>
             <h3 className="movieListTitle">Trending Movies</h3>

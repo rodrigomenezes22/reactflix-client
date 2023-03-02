@@ -74,10 +74,11 @@ function NewMovie() {
   return (
     <section className='adm-videos'>
         <Container>
+          <div className='spacer'></div>
             <div className='row justify-content-center'>
-                <div className='col-6 videos-form-wrapper p-5'>
-                    <h1 className='mt-5 text-start'>Add new video</h1>
-                    <form className="row g-3  mb-5" onSubmit={handleSubmit}>
+                <div className='col-10 col-md-8 col-lg-6  videos-form-wrapper p-5 mb-5'>
+                    <h1 className='text-start'>Add new video</h1>
+                    <form className="row g-3 " onSubmit={handleSubmit}>
                         <div className="col-md-6">
                             <label for="inputEmail4" className="form-label">Title</label>
                             <input type="text" className="form-control" id="title" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />

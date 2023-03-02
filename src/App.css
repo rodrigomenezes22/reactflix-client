@@ -5,6 +5,10 @@
 
 }
 
+.spacer {
+  height: 8rem;
+  width: 100%;
+}
 
 
 .App-logo {
@@ -12,18 +16,27 @@
   pointer-events: none;
 }
 
-#brand{
+#brand a{
   font-family: 'Bebas Neue', cursive;
   color: #CC0808;
   text-transform: uppercase;
   font-size: 3rem;
   text-align: left;
+  text-decoration: none;
 }
 
 #navbar{
   font-family: 'Bebas Neue', cursive;
   color: #f7eeee;
 }
+
+.navbar-nav a { 
+  font-family: 'Roboto', sans-serif;
+  padding: .5rem;
+  text-decoration: none;
+  font-size: .8rem;
+}
+
 
 #hero{
   background-image: url(./images/hero-tejasvi.jpg);
@@ -32,6 +45,26 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.55);
+  z-index: 0;
+}
+
+#hero .hero-body {
+  width: 100%;
+  text-align: left;
+  z-index: 1;
+  position: relative;
 }
 
 #search{
@@ -176,6 +209,7 @@ footer .nav .nav-item a {
 
 .videos-form-wrapper {
   background-color: white;
+  border-radius: 15px;
 
 }
 

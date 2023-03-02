@@ -15,7 +15,6 @@ function App() {
 <Header />
 
       <main>
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/api/movies" element={<MoviesList />} />
@@ -25,9 +24,8 @@ function App() {
         </Routes>
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
+    <Footer />
+
     </div>
   );
 }
