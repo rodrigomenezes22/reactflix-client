@@ -9,6 +9,7 @@ function Footer() {
     }
 
   return (
+    <footer>
     <div className='container'>
         <div className='row'>
             <div className='logo'>Reactflix</div>
@@ -56,6 +57,7 @@ function Footer() {
                 <p className='text-white small'>All righst reserved {year()}</p>
         </div>
     </div>
+    </footer>
   )
 }
 

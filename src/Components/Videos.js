@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container'
 
 
 
-function Videos() {
+function Videos({genre}) {
 
   const [movies, setMovies] = useState([]);
 
@@ -42,6 +42,9 @@ function Videos() {
 
   return (
     <section className='videos'>
+        <Container>
+          <h2>{genre}</h2>
+        </Container>
         <Container>
             <Carousel responsive={responsive}>
             {
