@@ -12,7 +12,35 @@
   pointer-events: none;
 }
 
+#brand{
+  font-family: 'Bebas Neue', cursive;
+  color: #CC0808;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: left;
+}
 
+#navbar{
+  font-family: 'Bebas Neue', cursive;
+  color: #f7eeee;
+}
+
+#hero{
+  background-image: url(./images/hero-tejasvi.jpg);
+  height: 80vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#search{
+  border-radius: 20px;
+}
+
+#join{
+  border-radius: 20px;
+ margin: 10px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

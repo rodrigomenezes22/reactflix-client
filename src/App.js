@@ -7,12 +7,15 @@ import NewMovie from './Components/NewMovie';
 import MoviesList from "./Components/MoviesList";
 import Moviesdetails from "./Components/Moviesdetails";
 import UppdateMovie from "./Components/UpdateMovie";
+import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
-      <header></header>
+<Header />
+
       <main>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/api/movies" element={<MoviesList />} />
