@@ -10,6 +10,25 @@
   width: 100%;
 }
 
+.roboto-large {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-size: .8rem;
+  font-weight: 300;
+}
+
+
+.roboto-category {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
 
 .App-logo {
   height: 40vmin;
@@ -70,12 +89,59 @@
 
 #search{
   border-radius: 20px;
+  display: flex;
+  padding: .4rem 1.2rem;
 }
 
 #join{
   border-radius: 20px;
- margin: 10px;
+  margin: 10px;
+  display: flex;
+  padding: .4rem 1.2rem;
+  align-items: center;
 }
+
+.btn.btn-primary {
+  border-radius: 40px!important;
+  margin: 10px!important;
+  display:flex!important;
+  justify-content: center;
+  align-items: center;
+  padding: .4rem 1.2rem!important;
+
+}
+
+.search-input {
+  height: auto;
+  padding: 1rem;
+  height: 2.4rem;
+  border-radius: 40px!important;
+  border: none!important;
+}
+
+.btn.btn-secondary {
+  border-radius: 40px!important;
+  margin: 10px!important;
+  display:flex!important;
+  justify-content: center!important;
+  padding: .4rem 1.2rem!important;
+  align-items: center;
+}
+
+.btn.btn-danger {
+  border-radius: 40px!important;
+  margin: 10px!important;
+  display:flex!important;
+  justify-content: center!important;
+  padding: .4rem 1.2rem!important;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -102,13 +168,14 @@
 
 .movieInfoColumn {
   display: grid;
-  align-content: space-around;
+  align-content: center;
 }
 
 #movieInfoButtons {
   display: flex;
   align-content: center;
   padding: 1rem;
+  justify-content: space-evenly;
 }
 
 .movieListTitle {
@@ -168,14 +235,12 @@ footer .nav .nav-item a {
   font-size: .7rem;
 }
 
-.videos {
-  background-color: black;
-}
 
 .video-covers {
   width: 100%;
   height: auto;
   transition: .7s transform;
+  box-shadow: 1px 3px 15px rgba(0,0,0,0.2);
 }
 
 .video-covers:hover {
@@ -189,6 +254,10 @@ footer .nav .nav-item a {
   object-fit: contain;
   height: 100%;
 
+}
+
+form {
+  align-items: center;
 }
 
 .form-label {

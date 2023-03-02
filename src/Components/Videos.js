@@ -44,7 +44,7 @@ function Videos({genre}) {
   return (
     <section className='videos'>
         <Container>
-          <h2 className="text-white mt-4 text-start">{genre}</h2>
+          <h2 className="text-white mt-4 text-start roboto-category">{genre}</h2>
         </Container>
         <Container>
             <Carousel responsive={responsive}>

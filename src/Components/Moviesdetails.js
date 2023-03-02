@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
+import Row from 'react-bootstrap/Row';
 
 function Moviesdetails() {
   const { id } = useParams();
@@ -28,28 +29,58 @@ function Moviesdetails() {
 
   return (
     <div className="container">
-      <div className="spacer"></div>
-      <h2 className="text-white mt-5">{movie?.title}</h2>
-      <img
-        className="movieDetailsImages col-3"
-        src={movie?.poster}
-        alt={movie?.title}
-      />
-      <br />
-      <h5 className="text-light">Director: {movie?.director}</h5>
-      <h5 className="text-light">Year: {movie?.year}</h5>
-      <h5 className="text-light">Rating: {movie?.rating}</h5>
-      <h5 className="text-light">Genre :{movie?.genre}</h5>
-      <h5 className="text-light">Duration: {movie?.movie_duration}</h5>
+            <div className="spacer"></div>
+      <div className="row justify-content-center" >
+        <div className="col-4">
+          <img
+            className="movieDetailsImages"
+            src={movie?.poster}
+            alt={movie?.title}
+          />
+        </div>
+        <div className="col-6 text-start">
+        <h3 className="text-white roboto-light mt-3">Movie Title</h3>
+        <h2 className="text-white roboto-large" >{movie?.title}</h2>
+        <h3 className="text-white roboto-light mt-3">Director</h3>
+        <h5 className="text-light roboto">{movie?.director}</h5>
+        <h3 className="text-white roboto-light mt-3">Year</h3>
+        <h5 className="text-light roboto">{movie?.year}</h5>
+        <h3 className="text-white roboto-light mt-3">Rating</h3>
+        <h5 className="text-light roboto"> {movie?.rating}</h5>
+        <h3 className="text-white roboto-light mt-3">Genre</h3>
+        <h5 className="text-light roboto">{movie?.genre}</h5>
+        <h3 className="text-white roboto-light mt-3">Duration</h3>
+        <h5 className="text-light roboto">{movie?.movie_duration}</h5>
+        <div className="buttons">
 
-      <div className="buttons">
-      <Link to={`/update/movies/${movie?.id}`} className="btn btn-primary btn-sm" type="button">
-         Edit
+        <Link to="/api/movies" className="btn btn-secondary m-3 p-2" type="button">
+         
+        <span class="material-symbols-sharp">
+        arrow_back
+        </span>
+         Go back to Movies List
+        </Link>          
+      <Link to={`/update/movies/${movie?.id}`} className="btn btn-primary m-3" type="button">
+      <span class="material-symbols-sharp">
+        edit
+        </span> Edit
       </Link>
-      <button className="btn btn-danger btn-sm" value={movie?.id} onClick={handleDelete} type="button">
-        Delete
-      </button>
+      <button className="btn btn-danger m-3" value={movie?.id} onClick={handleDelete} type="button">
+      <span class="material-symbols-sharp">delete</span>Delete</button>
       </div>
+        </div>
+
+      </div>
+
+
+
+      <br />
+
+
+
+
+
+
     </div>
 
   );

@@ -50,16 +50,19 @@ function Header() {
             
             
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex ">
             <Form.Control
               type="search"
               placeholder="Search"
-              className="me-2"
+              className="me-2 search-input"
               aria-label="Search"
             />
-            <Button className="searchButton" id="search" variant="danger" >Search</Button>
+            <Button className="searchButton" id="search" variant="danger" >
+            <span class="material-symbols-sharp">search</span>
+              Search</Button>
           </Form>
-          <Button className="joinButton" id="join" >Join Now</Button>
+          <Button className="joinButton" id="join" >
+          <span class="material-symbols-sharp">login</span>Join Now</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
