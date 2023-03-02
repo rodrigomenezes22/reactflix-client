@@ -25,10 +25,6 @@ function MoviesList() {
         <MoviesColumns />
       </Container>
 
-      <Container>
-        <h3 className="movieListTitle">Hit Movies</h3>
-        <MoviesColumns />
-      </Container>
     </>
   );
 }

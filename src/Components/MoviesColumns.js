@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
 import { Button } from "bootstrap";
 
 function MoviesColumns() {
+  const navigate = useNavigate()
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -15,10 +16,27 @@ function MoviesColumns() {
       .catch((e) => console.log(e));
   }, []);
 
+  const handleDelete = (e) => {
+    axios
+      .delete(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies/${e.target.value}`)
+      .then((res) => navigate("/api/movies"))
+      .catch((e) => console.log(e));
+  };
+
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
+      .then((res) => setMovies(res.data))
+      .catch((e) => console.log(e));
+  }, [handleDelete]);
+
+
+
   return (
     <>
       {movies.map((e) => (
-        <Row className="bg-light border rounded m-4">
+        <Row className="bg-light border rounded m-4" key={e.id}>
           <Col sm={2}>
             <Link to={`/api/movies/${e.id}`}>
               <img className="movieImages" src={e.poster} />
@@ -49,20 +67,16 @@ function MoviesColumns() {
                 <Row className="fw-bold">Duration</Row>
                 <Row>{e?.movie_duration}</Row>
               </Col>
-              <Col sm={5} id="movieInfoButtons">
+<Col sm={5} id="movieInfoButtons">
                 <Col sm={1}>
-                  <Link to={`/update/movies/${e.id}`}>
-                    <button className="btn btn-primary btn-sm" type="button">
-                      Edit
-                    </button>
+                  <Link to={`/update/movies/${e.id}`} className="btn btn-primary btn-sm" type="button">
+                    Edit
                   </Link>
                 </Col>
                 <Col sm={9}>
-                  {/* <Link to={`/update/movies/${e.id}`}> */}
-                  <button className="btn btn-danger btn-sm" type="button">
+                  <button className="btn btn-danger btn-sm" value={e.id} onClick={handleDelete} type="button">
                     Delete
                   </button>
-                  {/* </Link> */}
                 </Col>
               </Col>
             </Row>
@@ -72,11 +86,5 @@ function MoviesColumns() {
     </>
   );
 }
-
-// <div className="col-" key={e.id}>
-//   <Link to={`/api/movies/${e.id}`}>
-//     <img className="movieImages" src={e.poster} />
-//   </Link>
-// </div>
 
 export default MoviesColumns;
