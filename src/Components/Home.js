@@ -1,13 +1,14 @@
 import React from "react";
 import MoviesList from "./MoviesList";
 import Videos from "./Videos";
+import Hero from "./Hero";
 
 
 function Home() {
   return (
     <div>
       
-      <h1>Home!</h1>
+      <Hero />
       <MoviesList />
       <Videos />
     </div>

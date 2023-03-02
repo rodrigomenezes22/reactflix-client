@@ -12,17 +12,17 @@ function Header() {
         
         <Navbar.Brand id="brand" href="#">REACTFLIX</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" >
           <Nav id="navbar"
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 "
            
             navbarScroll
           >
-            <Nav.Link  href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Movies</Nav.Link>
-            <Nav.Link href="#action2">Series</Nav.Link>
-            <Nav.Link href="#action2">TV Shows</Nav.Link>
-            <Nav.Link href="#action2">Categories</Nav.Link>
+            <Nav.Link className="text-light" href="#action1">Home</Nav.Link>
+            <Nav.Link className="text-light" href="#action2">Movies</Nav.Link>
+            <Nav.Link className="text-light" href="#action2">Series</Nav.Link>
+            <Nav.Link className="text-light" href="#action2">TV Shows</Nav.Link>
+            <Nav.Link className="text-light" href="#action2">Categories</Nav.Link>
             
             
           </Nav>
@@ -33,9 +33,9 @@ function Header() {
               className="me-2"
               aria-label="Search"
             />
-            <Button className="searchButton" id="search" >Search</Button>
+            <Button className="searchButton" id="search" variant="danger" >Search</Button>
           </Form>
-          <Button className="joinButton" id="join" variant="success">Join Now</Button>
+          <Button className="joinButton" id="join" >Join Now</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

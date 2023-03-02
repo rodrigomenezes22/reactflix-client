@@ -3,8 +3,8 @@
 function Hero() {
 return(
 <>
-    <div className="mt-0" id="hero">
-        
+    <div className=" mt-0" id="hero">
+    
     </div>
     </>
 );

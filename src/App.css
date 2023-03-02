@@ -26,7 +26,20 @@
 }
 
 #hero{
-  background-image: url(./images/city.jpg);
+  background-image: url(./images/hero-tejasvi.jpg);
+  height: 80vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#search{
+  border-radius: 20px;
+}
+
+#join{
+  border-radius: 20px;
+ margin: 10px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
