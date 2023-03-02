@@ -38,17 +38,18 @@ function Videos({genre}) {
         }
       };
 
-
+      const filterList = movies.filter((movie) => movie.genre === genre);
+      console.log(filterList);
 
   return (
     <section className='videos'>
         <Container>
-          <h2>{genre}</h2>
+          <h2 className="text-white mt-4 text-start">{genre}</h2>
         </Container>
         <Container>
             <Carousel responsive={responsive}>
             {
-                movies.map((movie) => ( <div className='video-wrappers'  key={movie.id}><Link to={`/api/movies/${movie.id}`}><img src={movie.poster} className="video-covers" alt={movie.title} /></Link></div>))
+                filterList.map((movie) => ( <div className='video-wrappers'  key={movie.id}><Link to={`/api/movies/${movie.id}`}><img src={movie.poster} className="video-covers" alt={movie.title} /></Link></div>))
             }
             </Carousel>
         </Container>
