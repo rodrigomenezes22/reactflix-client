@@ -51,14 +51,18 @@ function MoviesColumns() {
               </Col>
               <Col sm={5} id="movieInfoButtons">
                 <Col sm={1}>
-                  <button className="btn btn-primary btn-sm" type="button">
-                    Edit
-                  </button>
+                  <Link to={`/update/movies/${e.id}`}>
+                    <button className="btn btn-primary btn-sm" type="button">
+                      Edit
+                    </button>
+                  </Link>
                 </Col>
                 <Col sm={9}>
+                  {/* <Link to={`/update/movies/${e.id}`}> */}
                   <button className="btn btn-danger btn-sm" type="button">
                     Delete
                   </button>
+                  {/* </Link> */}
                 </Col>
               </Col>
             </Row>

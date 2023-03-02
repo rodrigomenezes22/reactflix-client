@@ -59,6 +59,12 @@
   color: white;
 }
 
+.movieListTitleRow {
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 .listTitle {
   margin-top: 1rem;
