@@ -56,6 +56,15 @@
   box-shadow: 1px 1px 1px black;
 }
 
+.movieDetailsImages {
+  width: 100%;
+  /* object-fit: fill;
+  display: flex; */
+  margin-top: 2%;
+  margin-bottom: 4%;
+  box-shadow: 1px 1px 1px black;
+}
+
 .movieInfoColumn {
   display: grid;
   align-content: space-around;
@@ -66,6 +75,24 @@
   align-content: center;
   padding: 1rem;
 }
+
+.movieListTitle {
+  margin-left: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: calc(16px + 2vmin);
+  color: white;
+}
+
+.movieListTitleRow {
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 .listTitle {
   margin-top: 1rem;
