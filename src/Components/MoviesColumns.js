@@ -67,7 +67,7 @@ function MoviesColumns() {
                 <Row className="fw-bold">Duration</Row>
                 <Row>{e?.movie_duration}</Row>
               </Col>
-              <Col sm={5} id="movieInfoButtons">
+<Col sm={5} id="movieInfoButtons">
                 <Col sm={1}>
                   <Link to={`/update/movies/${e.id}`} className="btn btn-primary btn-sm" type="button">
                     Edit
@@ -86,11 +86,5 @@ function MoviesColumns() {
     </>
   );
 }
-
-// <div className="col-" key={e.id}>
-//   <Link to={`/api/movies/${e.id}`}>
-//     <img className="movieImages" src={e.poster} />
-//   </Link>
-// </div>
 
 export default MoviesColumns;
