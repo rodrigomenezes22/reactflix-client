@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;900&display=swap");
 
 .App {
   text-align: center;
-
 }
 
 .spacer {
@@ -11,20 +10,19 @@
 }
 
 .roboto-large {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.5rem;
   font-weight: 900;
 }
 
 .roboto-light {
-  font-family: 'Roboto', sans-serif;
-  font-size: .8rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
   font-weight: 300;
 }
 
-
 .roboto-category {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-size: 1.2rem;
   margin-left: 1rem;
@@ -35,29 +33,28 @@
   pointer-events: none;
 }
 
-#brand a{
-  font-family: 'Bebas Neue', cursive;
-  color: #CC0808;
+#brand a {
+  font-family: "Bebas Neue", cursive;
+  color: #cc0808;
   text-transform: uppercase;
   font-size: 3rem;
   text-align: left;
   text-decoration: none;
 }
 
-#navbar{
-  font-family: 'Bebas Neue', cursive;
+#navbar {
+  font-family: "Bebas Neue", cursive;
   color: #f7eeee;
 }
 
-.navbar-nav a { 
-  font-family: 'Roboto', sans-serif;
-  padding: .5rem;
+.navbar-nav a {
+  font-family: "Roboto", sans-serif;
+  padding: 0.5rem;
   text-decoration: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
-
-#hero{
+#hero {
   background-image: url(./images/hero-tejasvi.jpg);
   height: 80vh;
   width: 100%;
@@ -76,7 +73,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(0, 0, 0, 0.55);
   z-index: 0;
 }
 
@@ -87,59 +84,58 @@
   position: relative;
 }
 
-#search{
+#search {
   border-radius: 20px;
   display: flex;
-  padding: .4rem 1.2rem;
+  padding: 0.4rem 1.2rem;
 }
 
-#join{
+#join {
   border-radius: 20px;
   margin: 10px;
   display: flex;
-  padding: .4rem 1.2rem;
+  padding: 0.4rem 1.2rem;
   align-items: center;
 }
 
 .btn.btn-primary {
-  border-radius: 40px!important;
-  margin: 10px!important;
-  display:flex!important;
+  border-radius: 40px !important;
+  margin: 10px !important;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  padding: .4rem 1.2rem!important;
-
+  padding: 0.4rem 1.2rem !important;
 }
 
 .search-input {
   height: auto;
   padding: 1rem;
   height: 2.4rem;
-  border-radius: 40px!important;
-  border: none!important;
+  border-radius: 40px !important;
+  border: none !important;
 }
 
 .btn.btn-secondary {
-  border-radius: 40px!important;
-  margin: 10px!important;
-  display:flex!important;
-  justify-content: center!important;
-  padding: .4rem 1.2rem!important;
+  border-radius: 40px !important;
+  margin: 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0.4rem 1.2rem !important;
   align-items: center;
 }
 
 .btn.btn-danger {
-  border-radius: 40px!important;
-  margin: 10px!important;
-  display:flex!important;
-  justify-content: center!important;
-  padding: .4rem 1.2rem!important;
+  border-radius: 40px !important;
+  margin: 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 0.4rem 1.2rem !important;
   align-items: center;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -195,7 +191,6 @@
   justify-content: space-between;
 }
 
-
 .listTitle {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -212,13 +207,13 @@
 }
 
 footer {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   padding: 3rem 1rem 1rem;
 }
 
 footer .logo {
-  font-family: 'Bebas Neue', cursive;
-  color: #CC0808;
+  font-family: "Bebas Neue", cursive;
+  color: #cc0808;
   text-transform: uppercase;
   font-size: 3rem;
   text-align: left;
@@ -231,16 +226,15 @@ footer .nav .nav-item {
 footer .nav .nav-item a {
   color: #ccc;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: .7rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
 }
-
 
 .video-covers {
   width: 100%;
   height: auto;
-  transition: .7s transform;
-  box-shadow: 1px 3px 15px rgba(0,0,0,0.2);
+  transition: 0.7s transform;
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .video-covers:hover {
@@ -253,7 +247,6 @@ footer .nav .nav-item a {
   overflow: hidden;
   object-fit: contain;
   height: 100%;
-
 }
 
 form {
@@ -273,14 +266,13 @@ form {
 }
 
 .scrolled {
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(5px);
 }
 
 .videos-form-wrapper {
   background-color: white;
   border-radius: 15px;
-
 }
 
 @media only screen and (max-width: 1600px) {
