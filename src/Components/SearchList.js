@@ -12,7 +12,7 @@ function SearchList() {
         <div className="spacer"></div>
         <Row className="movieListTitleRow">
           <Col sm={6}>
-            <h3 className="movieListTitle">Trending Movies</h3>
+            <h3 className="movieListTitle">Search results</h3>
           </Col>
           <Col sm={6}>
             <Link to={`/movies/new`}>

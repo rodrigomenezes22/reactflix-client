@@ -21,8 +21,7 @@ function Footer() {
                     <li className='nav-item'><Link to="/">HOME</Link></li>
                     <li className='nav-item'><Link to="/api/movies">MOVIES LIST</Link></li>
                     <li className='nav-item'><Link to="/movies/new">ADD NEW MOVIE</Link></li>
-                    <li className='nav-item'><Link to="/">TV SHOWS</Link></li>
-                    <li className='nav-item'><Link to="/">CATEGORIES</Link></li>
+                    <li className='nav-item'><Link to="/api/search/tv">TV SHOWS</Link></li>
                     <li className='nav-item'><Link to="/">CONTACT</Link></li>                    
                 </ul>
             </div>
