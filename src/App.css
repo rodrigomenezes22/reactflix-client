@@ -285,6 +285,20 @@ form {
   #hero {
     height: 45vh;
   }
+
+
+  .sticky {
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 99;
+  }
+
+  .scrolled { 
+  
+    position: fixed;
+  }
+
 }
 
 @media only screen and (max-width: 728px) {
@@ -292,6 +306,7 @@ form {
     height: 35vh;
   }
 }
+
 
 @keyframes App-logo-spin {
   from {
