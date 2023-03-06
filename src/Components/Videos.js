@@ -10,11 +10,17 @@ import Container from 'react-bootstrap/Container'
 function Videos({genre}) {
 
   const [movies, setMovies] = useState([]);
+  const [isLoadingVideos, setIsLoadingVideos] = useState(false);
 
   useEffect(() => {
+    setIsLoadingVideos(true);
+
     axios
       .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
-      .then((res) => setMovies(res.data))
+      .then((res) => {
+        setMovies(res.data);
+        setIsLoadingVideos(false);
+      })
       .catch((e) => console.log(e));
   }, []);
 
@@ -43,6 +49,10 @@ function Videos({genre}) {
 
   return (
     <section className='videos'>
+                  {isLoadingVideos ?   <div class="spinner-border text-light" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                        </div>
+            :   <> 
         <Container>
           <h2 className="text-white mt-4 text-start roboto-category">{genre}</h2>
         </Container>
@@ -53,6 +63,8 @@ function Videos({genre}) {
             }
             </Carousel>
         </Container>
+        </>
+        }
     </section>
   )
 }

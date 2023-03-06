@@ -164,7 +164,7 @@ function UppdateMovie() {
                   onChange={handleChange}
                 />
               </div>
-              <div className="col-12">
+              <div className="col-6">
                 <label for="inputAddress2" className="form-label">
                   Image Path
                 </label>
@@ -177,6 +177,9 @@ function UppdateMovie() {
                   value={movie.poster}
                   onChange={handleChange}
                 />
+              </div>
+              <div className="col-6">
+                <img src={movie.poster} alt={movie.title} className="img-fluid" />
               </div>
               <div className="col-12 text-start">
                 <button type="submit" className="btn btn-primary">

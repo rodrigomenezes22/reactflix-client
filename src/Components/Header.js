@@ -17,7 +17,10 @@ function Header() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/api/search/${searchTerm}`)
+    navigate(`/api/search/${searchTerm}`);
+    return () => {
+      console.log('Return clear');
+    }
   };
 
 
@@ -85,7 +88,7 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <h1 className="text-white">{searchTerm}</h1>
+     {searchTerm && <h3 className="text-white roboto">Searching results for: {searchTerm}</h3>}
     </header>
   );
 }

@@ -10,6 +10,7 @@ function SearchColumns() {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [deleteFlag, setDeleteFlag] = useState(false);
+  const [ isLoadingSearch, setIsLoadingSearch] = useState(false);
 
   useEffect(() => {
     axios
@@ -18,19 +19,53 @@ function SearchColumns() {
       .catch((e) => console.log(e));
   }, [deleteFlag]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/search/${keyword}`)
-  //     .then((res) => setMovies(res.data))
-  //     .catch((e) => console.log(e));
-  // }, []);
-
   useEffect(() => {
+    let moviesloaded = false;
+
+    console.log('Run Effec Movies');
     axios
       .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/search/${keyword}`)
-      .then((res) => setMovies(res.data))
-      .catch((e) => console.log(e));
+      .then((res) => {
+        if(!moviesloaded) {
+          setMovies(res.data);
+
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+        setMovies([]);
+
+        return;
+      });
+
+      return () => {
+        moviesloaded = true;
+      };
   }, [movies]);
+
+  // useEffect(() => {
+  //   let moviesloaded = false;
+  //   setIsLoadingSearch(true);
+  //   axios
+  //     .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/search/${keyword}`)
+  //     .then((res) => {
+  //       if(!moviesloaded) {
+  //         setMovies(res.data);
+  //         console.log(res.data[0].title);
+  //         setIsLoadingSearch(false);
+  //       }
+  //     })
+  //     .catch((e) => {
+  //       console.log(e)
+  //       setMovies([]);
+  //       setIsLoadingSearch(false);
+
+  //     });
+  //     return () => {
+  //       moviesloaded = true;
+
+  //     };
+  // }, []);
 
   const handleDelete = (e) => {
     axios
@@ -44,8 +79,12 @@ function SearchColumns() {
   };
 
   return (
+
+
     <>
-      {movies.map((e) => (
+    {isLoadingSearch ? <p className="text-white">Loading</p> : <></> }
+
+    {movies.length !== 0 ? movies && movies.map((e) => (
         <Row className="bg-light border rounded m-3 p-1" key={e.id}>
           <Col lg={2} md={6} sm={12}>
             <Link to={`/api/movies/${e.id}`}>
@@ -105,7 +144,7 @@ function SearchColumns() {
             </Row>
           </Col>
         </Row>
-      ))}
+      )): <><h3 className="text-white">No Movies Found</h3></>}
     </>
   );
 }
