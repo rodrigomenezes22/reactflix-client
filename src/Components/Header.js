@@ -17,9 +17,11 @@ function Header() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/api/search/${searchTerm}`);
-    return () => {
-      console.log('Return clear');
+    if(searchTerm.length !== 0 ) {
+      navigate(`/api/search/${searchTerm}`);
+      return () => {
+        console.log('Return clear');
+      }
     }
   };
 
@@ -62,14 +64,12 @@ function Header() {
               <NavLink className="text-light" to="/movies/new">
                 Add Movie
               </NavLink>
-              <NavLink className="text-light" to="#action2">
+              <NavLink className="text-light" to="/api/search/tv">
                 TV Shows
               </NavLink>
-              <NavLink className="text-light" to="#action2">
-                Categories
-              </NavLink>
+
             </Nav>
-            <Form className="d-flex"  onSubmit={handleSearch}>
+            <Form className="d-flex"  onSubmit={handleSearch} id="search-form">
               <Form.Control
                 type="search"
                 placeholder="Search"
