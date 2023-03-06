@@ -9,11 +9,16 @@ function MoviesColumns() {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [deleteFlag, setDeleteFlag] = useState(false);
+  const [isLoadingMovies, setIsLoadingMovies] = useState(false);
 
   useEffect(() => {
+    setIsLoadingMovies(true);
     axios
       .get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/movies`)
-      .then((res) => setMovies(res.data))
+      .then((res) => {
+        setMovies(res.data)
+        setIsLoadingMovies(false);
+      })
       .catch((e) => console.log(e));
   }, []);
 
@@ -37,7 +42,15 @@ function MoviesColumns() {
 
   return (
     <>
-      {movies.map((e) => (
+      {isLoadingMovies ? 
+      
+      <div class="spinner-border text-light" role="status">
+      <span class="visually-hidden">Loading...</span>
+      </div>
+
+      :
+      
+      movies.map((e) => (
         <Row className="bg-light border rounded m-3 p-1" key={e.id}>
           <Col lg={2} md={6} sm={12}>
             <Link to={`/api/movies/${e.id}`}>
